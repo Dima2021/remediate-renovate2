@@ -1,0 +1,49 @@
+{
+  "settingsInheritedFrom": "Dima2021/whitesource-config@master",
+  "remediateSettings": {
+    "workflowRules": {
+      "enabled": true,
+      "minVulnerabilitySeverity": "LOW"
+    },
+    "enableRenovate": true,
+    "extends": [
+       "config:base",
+       "github>whitesource/merge-confidence:beta"
+    ],
+    "packageRules": [
+       {
+      	 "groupName": "minor and patch",
+      	 "matchUpdateTypes": ["minor", "patch"],
+      	 "matchConfidence": ["very high", "high"],
+      	 "automerge": true
+       },
+       {
+      	 "matchUpdateTypes": ["major"],
+      	 "matchConfidence": ["very high"],
+      	 "addLabels": ["Major: very high confidence"]
+       },
+       {
+      	 "matchUpdateTypes": ["major"],
+      	 "matchConfidence": ["high"],
+      	 "addLabels": ["Major: high confidence"]
+       },
+       {
+      	 "matchManagers": ["maven", "gradle", "gomod", "npm". "yarn", "nuget", "pipenv", "poetry", "pyenv", "composer"],
+         "dependencyDashboardApproval": false
+       },
+       {
+      	 "matchConfidence": ["low"],
+      	 "dependencyDashboardApproval": true,
+         "commitMessagePrefix": "[LOW] "
+       },
+       {
+      	 "matchConfidence": ["neutral"],
+      	 "dependencyDashboardApproval": true,
+         "commitMessagePrefix": "[NEUTRAL] "
+       }
+    ]
+  },
+  "leastVulnerablePackageSettings": {
+    "enabled": true
+  }
+}
