@@ -40,6 +40,11 @@
       	 "matchConfidence": ["neutral"],
       	 "dependencyDashboardApproval": true,
          "commitMessagePrefix": "[NEUTRAL] "
+       },
+       {
+      	 "matchPackagePatterns": ["*"],
+      	 "dependencyDashboardApproval": true,
+         "commitMessagePrefix": "[UNDETERMINED] "
        }
     ]
   },
