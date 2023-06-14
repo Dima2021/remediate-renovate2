@@ -12,40 +12,43 @@
     ],
     "packageRules": [
        {
+      	 "matchPackagePatterns": ["*"]
+         "commitMessagePrefix": "[UNDETERMINED] ",
+      	 "dependencyDashboardApproval": true
+       },
+       {
       	 "groupName": "minor and patch",
       	 "matchUpdateTypes": ["minor", "patch"],
       	 "matchConfidence": ["very high", "high"],
+         "dependencyDashboardApproval": false,
       	 "automerge": true
        },
        {
       	 "matchUpdateTypes": ["major"],
-      	 "matchConfidence": ["very high"],
-      	 "addLabels": ["Major: very high confidence"]
+      	 "matchConfidence": ["very high"]
+      	 "addLabels": ["Major: very high confidence"],
+         "dependencyDashboardApproval": false
        },
        {
       	 "matchUpdateTypes": ["major"],
       	 "matchConfidence": ["high"],
-      	 "addLabels": ["Major: high confidence"]
+      	 "addLabels": ["Major: high confidence"],
+         "dependencyDashboardApproval": false
+       },
+       {
+      	 "matchConfidence": ["low"],
+         "commitMessagePrefix": "[LOW] ",
+      	 "dependencyDashboardApproval": true
+       },
+       {
+      	 "matchConfidence": ["neutral"],
+         "commitMessagePrefix": "[NEUTRAL] ",
+         "dependencyDashboardApproval": true
        },
        {
       	 "matchManagers": ["maven", "gradle", "gomod", "npm", "yarn", "nuget", "pipenv", "poetry", "pyenv", "composer"],
          "dependencyDashboardApproval": false
        },
-       {
-      	 "matchConfidence": ["low"],
-      	 "dependencyDashboardApproval": true,
-         "commitMessagePrefix": "[LOW] "
-       },
-       {
-      	 "matchConfidence": ["neutral"],
-      	 "dependencyDashboardApproval": true,
-         "commitMessagePrefix": "[NEUTRAL] "
-       },
-       {
-      	 "matchPackagePatterns": ["*"],
-      	 "dependencyDashboardApproval": true,
-         "commitMessagePrefix": "[UNDETERMINED] "
-       }
     ]
   },
   "leastVulnerablePackageSettings": {
