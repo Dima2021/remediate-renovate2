@@ -12,7 +12,7 @@
     ],
     "packageRules": [
        {
-      	 "matchPackagePatterns": ["*"]
+      	 "matchPackagePatterns": ["*"],
          "commitMessagePrefix": "[UNDETERMINED] ",
       	 "dependencyDashboardApproval": true
        },
@@ -25,7 +25,7 @@
        },
        {
       	 "matchUpdateTypes": ["major"],
-      	 "matchConfidence": ["very high"]
+      	 "matchConfidence": ["very high"],
       	 "addLabels": ["Major: very high confidence"],
          "dependencyDashboardApproval": false
        },
