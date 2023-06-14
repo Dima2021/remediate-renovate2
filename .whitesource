@@ -28,7 +28,7 @@
       	 "addLabels": ["Major: high confidence"]
        },
        {
-      	 "matchManagers": ["maven", "gradle", "gomod", "npm". "yarn", "nuget", "pipenv", "poetry", "pyenv", "composer"],
+      	 "matchManagers": ["maven", "gradle", "gomod", "npm", "yarn", "nuget", "pipenv", "poetry", "pyenv", "composer"],
          "dependencyDashboardApproval": false
        },
        {
